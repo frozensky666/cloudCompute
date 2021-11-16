@@ -37,9 +37,9 @@ function getCsv() {
   };
 };
 
-function getRemoteFile() {
-  console.log(">>>>>>");
-  fetch("/static/example.csv").then(res => {
+function getRemoteFile(filePath) {
+  filePath = config.remote_file_path;
+  fetch(filePath).then(res => {
     console.log(res);
     return res.blob();
   }).then(b => {
